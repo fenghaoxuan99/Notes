@@ -1,6 +1,4 @@
 
-CMakeLists.txt 是 CMake 构建系统的配置文件，用于描述项目的构建过程。下面我将详细介绍一些常用的 CMake 指令及其用法，并标注注意事项。
-
 ### 1. 设置 CMake 最低版本要求
 ```cmake
 cmake_minimum_required(VERSION 3.10)
