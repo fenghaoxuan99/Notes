@@ -76,14 +76,18 @@
 - **拥塞窗口（cwnd）**：根据网络拥塞程度动态调整，发送窗口 = min(cwnd, 接收窗口)。
 - **四阶段算法**：
   1. **慢启动**：
+  ![alt text](../Image/慢启动.png)
      - cwnd从1 MSS开始，每收到1个ACK增加1（指数增长）。
      - 终止条件：cwnd ≥ 慢启动阈值（ssthresh，默认65535字节）。
   2. **拥塞避免**：
+![alt text](../Image/拥塞避免算法.png)
      - 每收到1个ACK，cwnd增加 `1/cwnd`（线性增长）。
   3. **拥塞发生**：
+  ![alt text](../Image/拥塞发生.png)
      - **超时重传**：ssthresh = cwnd/2，cwnd重置为初始值（Linux默认为10）。
      - **快速重传**：ssthresh = cwnd/2，cwnd = ssthresh + 3，进入快速恢复。
   4. **快速恢复**：
+  ![alt text](../Image/快速恢复.png)
      - 重传丢失包，每收到重复ACK则cwnd+1。
      - 收到新数据ACK后：cwnd = ssthresh，退出恢复阶段。
 
