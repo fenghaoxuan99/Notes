@@ -40,14 +40,14 @@
      - `FIN_WAIT_2` 状态最长持续 `tcp_fin_timeout`（默认 60 秒）→ 超时后关闭。  
   3. 若用 `shutdown()` 关闭：  
      - `FIN_WAIT_2` 可无限期等待（无超时限制）。  
-
+![alt text](../Image/第二次挥手丢失.png)
 #### **第三次挥手丢失（服务端 FIN 丢失）**
 - **现象**：服务端卡在 `LAST_ACK`，客户端在 `FIN_WAIT_2`。  
 - **处理**：  
   1. 服务端重传 FIN（受 `tcp_orphan_retries` 限制）。  
   2. 客户端在 `FIN_WAIT_2` 等待：  
      - 若超时（`tcp_fin_timeout`）→ 直接关闭。  
-
+![alt text](../Image/第三次挥手丢失.png)
 #### **第四次挥手丢失（客户端 ACK 丢失）**
 - **现象**：服务端卡在 `LAST_ACK`，客户端在 `TIME_WAIT`。  
 - **处理**：  
@@ -55,10 +55,11 @@
   2. 客户端在 `TIME_WAIT` 启动 `2MSL` 定时器：  
      - 若期间收到 FIN → 重置定时器。  
      - 超时（`2MSL`）→ 关闭连接。  
-
+![alt text](../Image/第四次挥手丢失.png)
 ---
 
 ### **为什么 TIME_WAIT 等待 2MSL？**
+![alt text](../Image/MSL.png)
 1. **确保 ACK 到达服务端**：  
    - 若 ACK 丢失，服务端重传 FIN 可在 `2MSL` 内被处理。  
 2. **消除旧连接残影**：  
