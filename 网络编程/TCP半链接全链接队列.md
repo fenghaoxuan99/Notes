@@ -1,4 +1,4 @@
-
+![alt text](../Image/链接过程.png)
 ### TCP半连接队列和全连接队列 
 ![alt text](../Image/内核链接队列.png) 
 #### 核心概念  

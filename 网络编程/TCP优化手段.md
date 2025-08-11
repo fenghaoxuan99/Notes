@@ -47,7 +47,8 @@
     echo 1 > /proc/sys/net/ipv4/tcp_abort_on_overflow  # 发送 RST 复位连接  
     ```  
 
-#### **3. 绕过三次握手（TCP Fast Open）**  
+#### **3. 绕过三次握手（TCP Fast Open）** 
+![alt text](../Image/FastOpen.png) 
 - **工作原理**：  
   - 首次连接缓存 Cookie，后续连接跳过三次握手。  
 - **启用方式**：  
