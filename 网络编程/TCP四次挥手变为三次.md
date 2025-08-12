@@ -6,6 +6,7 @@
 **结论：** **是**。在特定条件下，TCP 四次挥手可以变为三次挥手。这在实际抓包（如 Wireshark）中很常见。
 
 **一、标准 TCP 四次挥手流程**
+![alt text](../Image/四次挥手断开.png)
 1.  **FIN (Client -> Server):** 主动关闭方（客户端）发送 FIN 报文，进入 `FIN_WAIT_1` 状态，表示不再发送数据。
 2.  **ACK (Server -> Client):** 被动关闭方（服务器）收到 FIN 后，**立即**回复 ACK 报文，进入 `CLOSE_WAIT` 状态。
     *   *内核行为：* TCP 协议栈会在接收缓冲区为 FIN 包插入 EOF。应用需通过 `read` 感知此 EOF。
