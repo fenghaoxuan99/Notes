@@ -2,6 +2,7 @@
 # HTTPS 中 TLS 与 TCP 握手的关系  
 
 #### **常规流程（普遍情况）**  
+![alt text](../Image/HTTPS握手.png)
 1. **TCP 三次握手先行**  
    - HTTPS 基于 TCP 传输协议，必须先完成 TCP 三次握手建立可靠连接。  
    - **过程**：  
