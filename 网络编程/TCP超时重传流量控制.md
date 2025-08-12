@@ -17,12 +17,12 @@
     - 超时后重传间隔加倍，避免网络拥塞恶化。
 
 - **快速重传**
-![alt text](image.png)
+![alt text](../Image/快速重传.png)
   - 触发条件：收到**3个重复ACK**（如连续ACK=2）。
   - 问题：仅重传一个报文可能效率低；重传所有报文浪费资源。
 
 - **SACK（选择性确认）**
-![alt text](image-1.png)
+![alt text](../Image/选择性确认.png)
   - 在TCP头部选项字段声明已接收的数据段，使发送方仅重传丢失部分。
   - 需双方支持（Linux默认开启 `net.ipv4.tcp_sack=1`）。
 
