@@ -1,7 +1,6 @@
-# Linux I/O多路复用：select系统调用全面解析与实战指南
 
+# select系统调用全面解析与实战指南
 ## 1. select系统调用概述
-
 select是Unix/Linux系统中经典的I/O多路复用机制，它允许单个线程同时监控多个文件描述符的状态变化。作为早期Unix系统提供的解决方案，select虽然已被更高效的epoll取代，但理解其原理对掌握I/O多路复用概念至关重要。
 
 ### 1.1 核心功能
@@ -53,7 +52,6 @@ FD_SET(fd, &set);   // 添加fd到集合
 FD_CLR(fd, &set);   // 从集合移除fd
 FD_ISSET(fd, &set); // 检查fd是否在集合中
 ```
-
 **注意事项**：
 - select会修改此集合，只保留就绪的fd
 - **每次调用select前必须重新设置**

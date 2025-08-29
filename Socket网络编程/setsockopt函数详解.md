@@ -13,6 +13,7 @@ int setsockopt(int sockfd, int level, int optname,
               const void *optval, socklen_t optlen);
 ```
 
+
 ## 2. 参数深度解析
 
 ### 2.1 sockfd参数
@@ -308,9 +309,7 @@ printf("Actual receive buffer size: %d bytes\n", actual_rcvbuf);
 ```
 
 ## 6. 面试常见问题深度解析
-
 ### 6.1 SO_REUSEADDR vs SO_REUSEPORT
-
 **SO_REUSEADDR**：
 - **允许绑定处于TIME_WAIT状态的地址**
 - 主要解决服务器快速重启问题
@@ -416,9 +415,7 @@ fcntl(sock, F_SETFL, flags | O_NONBLOCK);
 ```
 
 # Socket选项详解：地址重用、端口重用与TCP保活机制
-
 ## 1. 设置地址重用(SO_REUSEADDR)
-
 ### 目的与作用
 `SO_REUSEADDR`选项允许socket绑定到处于`TIME_WAIT`状态的本地地址，这是服务器快速重启的关键配置。
 

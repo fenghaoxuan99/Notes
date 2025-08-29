@@ -11,6 +11,7 @@ struct sockaddr {
     char        sa_data[14];  // 协议地址
 };
 ```
+sockaddr_in。sin
 
 #### `struct sockaddr_in` (IPv4专用结构)
 ```c

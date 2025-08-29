@@ -1,9 +1,8 @@
+
+
 # fcntl 函数深度解析与应用指南
-
 ## 1. 函数概述
-
 `fcntl` (file control) 是 Unix/Linux 系统中用于控制文件描述符的核心系统调用，提供了对文件描述符的多种操作方式。
-
 ### 1.1 函数原型
 
 ```c
@@ -35,7 +34,6 @@ int fcntl(int fd, int cmd, ... /* arg */ );
 - `O_SYNC`: 同步写入
 
 #### 2.1.1 获取文件状态标志
-
 ```c
 int flags = fcntl(fd, F_GETFL);
 if (flags == -1) {
